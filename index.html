@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>KodeCamp86 | Web Dev Bootcamp</title>
   </head>
@@ -454,10 +458,53 @@
       </div>
     </section>
 
+    <!-- Contact & Maps -->
+    <section class="p-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-4">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold">Main Location:</span> 143 Paghanapin St.
+                BGC
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Enrollment Phone:</span> (917) 143-2987
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student Phone: </span> (917) 550-1342
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Enrollment Email:</span> enroll@kodego.ph
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student Email:</span> student@kodego.ph
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoicHJvZnJiYXp1ciIsImEiOiJjbG1pZjd6cHIwdHdlM2dwNGhwamJqMGMzIn0.W-HMzK3vhyEaJuKgF7AxRQ";
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [121.04543, 14.545728],
+        zoom: 18,
+      });
+    </script>
   </body>
 </html>
